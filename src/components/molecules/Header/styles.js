@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   },
   wrapperIconBack: {
     backgroundColor: 'white',
+    zIndex: 99,
     padding: 15,
     borderRadius: 10,
     shadowColor: '#000',

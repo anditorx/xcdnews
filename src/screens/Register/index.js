@@ -1,14 +1,15 @@
 import {SafeAreaView, ScrollView, StatusBar, Text, View} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Gap, Header, Input} from '../../components';
 import {responsiveHeight, windowWidth} from '../../utils';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {registerUserAction} from '../../redux/actions/AuthAction';
 
 const Register = ({navigation}) => {
   const dispatch = useDispatch();
+  const {loadingAuth} = useSelector(state => state.AuthReducer);
   const form = {
     firstName: '',
     lastName: '',
@@ -54,7 +55,7 @@ const Register = ({navigation}) => {
                 handleSubmit(data);
                 setTimeout(() => {
                   // formikActions.resetForm();
-                  formikActions.setSubmitting(false);
+                  formikActions.setSubmitting(loadingAuth);
                 }, 5000);
               }}>
               {({

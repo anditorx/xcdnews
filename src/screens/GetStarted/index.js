@@ -5,17 +5,47 @@ import {
   SafeAreaView,
   StatusBar,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 // dependencies
 // component
 
 // other
 import {IMG_BG} from '../../res/Images';
 import {windowHeight, windowWidth} from '../../utils/responsive';
-import {Button, Gap} from '../../components';
+import {Button, Gap, Loading} from '../../components';
 import {styles} from './styles';
+import {getDataStorage} from '../../utils';
+import {CONSTANT} from '../../constant';
 
 const GetStarted = ({navigation}) => {
+  const [active, setActive] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getDataUser();
+
+    setTimeout(() => {
+      if (active) {
+        setLoading(false);
+        navigation.reset({index: 0, routes: [{name: 'Home'}]});
+      }
+    }, 2000);
+  }, [active, getDataUser, navigation]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const getDataUser = () => {
+    getDataStorage(CONSTANT.STORAGE_DATAUSER)
+      .then(res => {
+        const data = res;
+        if (data) {
+          setActive(true);
+        }
+      })
+      // eslint-disable-next-line handle-callback-err
+      .catch(err => {
+        // error
+      });
+  };
   return (
     <View style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
@@ -35,6 +65,11 @@ const GetStarted = ({navigation}) => {
           </View>
         </View>
       </ImageBackground>
+      {loading && (
+        <View style={{position: 'absolute'}}>
+          <Loading />
+        </View>
+      )}
     </View>
   );
 };
