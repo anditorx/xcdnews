@@ -1,4 +1,10 @@
-import {Text, View, ImageBackground, SafeAreaView} from 'react-native';
+import {
+  Text,
+  View,
+  ImageBackground,
+  SafeAreaView,
+  StatusBar,
+} from 'react-native';
 import React from 'react';
 // dependencies
 // component
@@ -12,6 +18,7 @@ import {styles} from './styles';
 const GetStarted = ({navigation}) => {
   return (
     <View style={styles.container}>
+      <StatusBar translucent backgroundColor="transparent" />
       <ImageBackground source={IMG_BG} resizeMode="cover" style={styles.image}>
         <View style={styles.boxRegister}>
           <Text style={styles.title}>Hi, Welcome!</Text>

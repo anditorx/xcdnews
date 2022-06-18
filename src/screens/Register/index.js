@@ -1,13 +1,5 @@
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {SafeAreaView, Text, View} from 'react-native';
 import React from 'react';
-import {IC_BACK} from '../../res';
 import {Button, Gap, Header, Input} from '../../components';
 import {responsiveHeight, windowWidth} from '../../utils';
 import {Formik} from 'formik';
@@ -29,6 +21,7 @@ const Register = ({navigation}) => {
 
   const handleSubmit = data => {
     console.tron.log('🚀 ~ data :=>', data);
+    navigation.navigate('Home');
   };
 
   return (
@@ -37,7 +30,7 @@ const Register = ({navigation}) => {
       <Header onPress={() => navigation.goBack()} />
       {/* end header */}
       <View style={{paddingHorizontal: 20}}>
-        <Text style={{color: 'black', fontSize: 26, fontWeight: 'bold'}}>
+        <Text style={{color: 'black', fontSize: 45, fontWeight: 'bold'}}>
           Hi, Welcome!
         </Text>
         <Text style={{color: 'black', fontSize: 26, fontWeight: 'bold'}}>
