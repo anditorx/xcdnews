@@ -1,9 +1,9 @@
 import * as ActionTypes from '../actionTypes';
 
 const initialState = {
-  dataUser: false,
-  loadingUser: false,
-  successUser: false,
+  dataPost: false,
+  loadingPost: false,
+  successPost: false,
   error: false,
   errorMessage: false,
 };
@@ -13,30 +13,30 @@ export default function (state = initialState, action) {
     case ActionTypes.SHOW_LOADING:
       return {
         ...state,
-        loadingUser: action.payload,
+        loadingPost: action.payload,
       };
-    case ActionTypes.GET_USER_LIST_REQUEST:
+    case ActionTypes.GET_POST_LIST_REQUEST:
       return {
         ...state,
-        loadingUser: true,
+        loadingPost: true,
         error: false,
-        successUser: false,
+        successPost: false,
         errorMessage: false,
       };
-    case ActionTypes.GET_USER_LIST_SUCCESS:
+    case ActionTypes.GET_POST_LIST_SUCCESS:
       return {
         ...state,
-        loadingUser: false,
-        successUser: true,
-        dataUser: action.payload.dataUser,
+        loadingPost: false,
+        successPost: true,
+        dataPost: action.payload.dataPost,
       };
-    case ActionTypes.GET_USER_LIST_FAILED:
+    case ActionTypes.GET_POST_LIST_FAILED:
       return {
         ...state,
-        loadingUser: false,
+        loadingPost: false,
         error: true,
-        successUser: false,
-        dataUser: action.payload.dataUser,
+        successPost: false,
+        dataPost: action.payload.dataPost,
         errorMessage: action.payload.errorMessage,
       };
     default:

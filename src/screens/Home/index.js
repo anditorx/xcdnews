@@ -9,7 +9,7 @@ import {
   FlatList,
   StatusBar,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   colors,
   IC_BACK,
@@ -20,10 +20,24 @@ import {
   PostListDummy,
   UserListDummy,
 } from '../../res';
-import {CircleUser, Header, ItemPost, Next} from '../../components';
+import {CircleUser, Header, ItemPost, Loading, Next} from '../../components';
 import {windowWidth} from '../../utils';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  getListUserHomeAction,
+  getListPostHomeAction,
+} from '../../redux/actions';
 
 const Home = ({navigation}) => {
+  const dispatch = useDispatch();
+  const {dataUser, loadingUser} = useSelector(state => state.UserReducer);
+  const {dataPost, loadingPost} = useSelector(state => state.PostReducer);
+  console.tron.log('🚀 ~ dataPost :=>', dataPost);
+  useEffect(() => {
+    dispatch(getListUserHomeAction());
+    dispatch(getListPostHomeAction());
+  }, []);
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar barStyle={'dark-content'} backgroundColor="white" />
@@ -32,14 +46,16 @@ const Home = ({navigation}) => {
         {/* header */}
         {/* user */}
         <View style={{marginTop: 20, flexDirection: 'row'}}>
-          <FlatList
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            data={UserListDummy}
-            renderItem={({item}) => <CircleUser props={item} />}
-            keyExtractor={item => item.id}
-            ListFooterComponent={() => <Next />}
-          />
+          {dataUser && (
+            <FlatList
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              data={dataUser?.data?.slice(0, 5)}
+              renderItem={({item}) => <CircleUser props={item} />}
+              keyExtractor={item => item.id}
+              ListFooterComponent={() => <Next />}
+            />
+          )}
         </View>
         {/* post */}
         <View style={{marginTop: 20}}>
@@ -74,12 +90,18 @@ const Home = ({navigation}) => {
           </View>
           {/* item */}
 
-          {PostListDummy !== [] &&
-            PostListDummy.map((item, i) => {
-              return <ItemPost key={i} props={item} />;
+          {dataPost !== [] &&
+            dataPost.data.map((item, i) => {
+              return i < 10 ? <ItemPost key={i} props={item} /> : null;
             })}
         </View>
       </ScrollView>
+      {loadingUser ||
+        (loadingPost && (
+          <View style={{position: 'absolute'}}>
+            <Loading />
+          </View>
+        ))}
     </SafeAreaView>
   );
 };
