@@ -79,7 +79,7 @@ const Home = ({navigation}) => {
           {/* item */}
 
           {dataPost !== [] &&
-            dataPost.data.map((item, i) => {
+            dataPost?.data?.map((item, i) => {
               return i < 10 ? <ItemPost key={i} props={item} /> : null;
             })}
         </View>
