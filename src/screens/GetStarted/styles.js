@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../res';
-import {windowHeight, windowWidth} from '../../utils';
+import {responsiveHeight, windowHeight, windowWidth} from '../../utils';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,10 +19,10 @@ const styles = StyleSheet.create({
   },
   boxRegister: {
     backgroundColor: 'white',
-    height: windowHeight / 4,
     bottom: 0,
     position: 'absolute',
     width: windowWidth,
+    height: responsiveHeight(windowHeight / 2),
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
     padding: 20,

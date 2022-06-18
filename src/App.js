@@ -6,7 +6,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import Router from './router';
 import {Provider} from 'react-redux';
 import store from './redux/store';
-
+import FlashMessage from 'react-native-flash-message';
 const App = () => {
   useEffect(() => {
     if (__DEV__) {
@@ -20,6 +20,7 @@ const App = () => {
     <Provider store={store}>
       <NavigationContainer>
         <Router />
+        <FlashMessage position="bottom" />
       </NavigationContainer>
     </Provider>
   );

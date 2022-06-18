@@ -1,7 +1,7 @@
 import * as ActionTypes from '../actionTypes';
 
 const initialState = {
-  dataAuth: false,
+  dataUser: false,
   loadingAuth: false,
   successAuth: false,
   error: false,
