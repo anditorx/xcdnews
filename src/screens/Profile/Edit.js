@@ -14,37 +14,9 @@ import {useSelector} from 'react-redux';
 import {getDataStorage} from '../../utils';
 import {CONSTANT} from '../../constant';
 
-const ProfileEdit = ({navigation}) => {
+const ProfileEdit = ({navigation, dataUser}) => {
   // const {dataUser} = useSelector(state => state.AuthReducer);
   const [loading, setLoading] = useState(false);
-  const [dataUser, setDataUser] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    getDataUser();
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, [getDataUser]);
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const getDataUser = () => {
-    getDataStorage(CONSTANT.STORAGE_DATAUSER)
-      .then(res => {
-        const data = res;
-        console.tron.log('🚀 ~ data :=>', data);
-        // setLoading(false);
-        setDataUser(data);
-      })
-      // eslint-disable-next-line handle-callback-err
-      .catch(err => {
-        // error
-      });
-  };
-
-  const handleSignOut = () => {
-    navigation.reset({index: 0, routes: [{name: 'GetStarted'}]});
-  };
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
@@ -52,7 +24,7 @@ const ProfileEdit = ({navigation}) => {
       <Header
         onPress={() => navigation.goBack()}
         type="header-screen"
-        text="Profile"
+        text="Edit Profile"
       />
       <View style={styles.container}>
         <View style={styles.wrapperAvatar}>
@@ -65,14 +37,6 @@ const ProfileEdit = ({navigation}) => {
         </View>
         <List type={'list-profile'} />
       </View>
-      <TouchableOpacity style={styles.wrapperSignOut} onPress={handleSignOut}>
-        <Text style={styles.titleSignOut}>Sign Out</Text>
-      </TouchableOpacity>
-      {loading && (
-        <View style={{position: 'absolute'}}>
-          <Loading />
-        </View>
-      )}
     </SafeAreaView>
   );
 };

@@ -11,11 +11,10 @@ import {Header, Gap, List, Loading} from '../../components';
 import {IMG_ACCOUNT_BLACK, IC_NEXT, colors} from '../../res';
 import {styles} from './styles';
 import {useSelector} from 'react-redux';
-import {getDataStorage} from '../../utils';
+import {clearStorage, getDataStorage} from '../../utils';
 import {CONSTANT} from '../../constant';
 
 const Profile = ({navigation}) => {
-  // const {dataUser} = useSelector(state => state.AuthReducer);
   const [loading, setLoading] = useState(false);
   const [dataUser, setDataUser] = useState(false);
 
@@ -32,18 +31,20 @@ const Profile = ({navigation}) => {
     getDataStorage(CONSTANT.STORAGE_DATAUSER)
       .then(res => {
         const data = res;
-        console.tron.log('🚀 ~ data :=>', data);
-        // setLoading(false);
         setDataUser(data);
       })
-      // eslint-disable-next-line handle-callback-err
       .catch(err => {
         // error
       });
   };
 
   const handleSignOut = () => {
-    navigation.reset({index: 0, routes: [{name: 'GetStarted'}]});
+    setLoading(true);
+    clearStorage();
+    setTimeout(() => {
+      navigation.reset({index: 0, routes: [{name: 'GetStarted'}]});
+      setLoading(false);
+    }, 2000);
   };
 
   return (
@@ -63,7 +64,10 @@ const Profile = ({navigation}) => {
           </Text>
           <Text style={styles.email}>{dataUser?.email}</Text>
         </View>
-        <List type={'list-profile'} />
+        <List
+          type={'list-profile'}
+          // onPress={() => navigation.navigate('EditProfile', dataUser)}
+        />
       </View>
       <TouchableOpacity style={styles.wrapperSignOut} onPress={handleSignOut}>
         <Text style={styles.titleSignOut}>Sign Out</Text>

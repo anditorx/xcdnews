@@ -1,10 +1,4 @@
-import {
-  Text,
-  View,
-  ImageBackground,
-  SafeAreaView,
-  StatusBar,
-} from 'react-native';
+import {Text, View, ImageBackground, StatusBar} from 'react-native';
 import React, {useEffect, useState} from 'react';
 // dependencies
 // component
@@ -29,6 +23,7 @@ const GetStarted = ({navigation}) => {
         setLoading(false);
         navigation.reset({index: 0, routes: [{name: 'Home'}]});
       }
+      setLoading(false);
     }, 2000);
   }, [active, getDataUser, navigation]);
 

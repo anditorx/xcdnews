@@ -3,25 +3,14 @@ import {
   Text,
   View,
   SafeAreaView,
-  Image,
   TouchableOpacity,
   ScrollView,
   FlatList,
   StatusBar,
 } from 'react-native';
 import React, {useEffect} from 'react';
-import {
-  colors,
-  IC_BACK,
-  IC_IMG_GALLERY,
-  IC_MENU_3_DOT_BLACK,
-  IC_NEXT,
-  IMG_BG,
-  PostListDummy,
-  UserListDummy,
-} from '../../res';
+import {colors, IC_IMG_GALLERY} from '../../res';
 import {CircleUser, Header, ItemPost, Loading, Next} from '../../components';
-import {windowWidth} from '../../utils';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   getListUserHomeAction,
@@ -32,7 +21,6 @@ const Home = ({navigation}) => {
   const dispatch = useDispatch();
   const {dataUser, loadingUser} = useSelector(state => state.UserReducer);
   const {dataPost, loadingPost} = useSelector(state => state.PostReducer);
-  console.tron.log('🚀 ~ dataPost :=>', dataPost);
   useEffect(() => {
     dispatch(getListUserHomeAction());
     dispatch(getListPostHomeAction());
