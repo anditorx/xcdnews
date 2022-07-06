@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "tcgrdna.app"
-               BlueprintName = "tcgrdna"
-               ReferencedContainer = "container:tcgrdna.xcodeproj">
+               BuildableName = "xcdnews.app"
+               BlueprintName = "xcdnews"
+               ReferencedContainer = "container:xcdnews.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "tcgrdnaTests.xctest"
-               BlueprintName = "tcgrdnaTests"
-               ReferencedContainer = "container:tcgrdna.xcodeproj">
+               BuildableName = "xcdnewsTests.xctest"
+               BlueprintName = "xcdnewsTests"
+               ReferencedContainer = "container:xcdnews.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "tcgrdna.app"
-            BlueprintName = "tcgrdna"
-            ReferencedContainer = "container:tcgrdna.xcodeproj">
+            BuildableName = "xcdnews.app"
+            BlueprintName = "xcdnews"
+            ReferencedContainer = "container:xcdnews.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "tcgrdna.app"
-            BlueprintName = "tcgrdna"
-            ReferencedContainer = "container:tcgrdna.xcodeproj">
+            BuildableName = "xcdnews.app"
+            BlueprintName = "xcdnews"
+            ReferencedContainer = "container:xcdnews.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

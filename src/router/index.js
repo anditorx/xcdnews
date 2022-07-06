@@ -3,13 +3,26 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {GetStarted, Home, Profile, Register} from '../screens';
 import ProfileEdit from '../screens/Profile/Edit';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {MyTabBar} from '../components';
 
 const Stack = createNativeStackNavigator();
+
+const Tab = createMaterialTopTabNavigator();
+
+// function MyTabs() {
+//   return (
+//     <Tab.Navigator tabBar={props => <MyTabBar {...props} />}>
+//       <Tab.Screen name="Home" component={Home} />
+//       <Tab.Screen name="Profile" component={Profile} />
+//     </Tab.Navigator>
+//   );
+// }
 
 const Router = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="GetStarted"
         component={GetStarted}
         options={{headerShown: false}}
@@ -18,7 +31,7 @@ const Router = () => {
         name="Register"
         component={Register}
         options={{headerShown: false}}
-      />
+      /> */}
       <Stack.Screen
         name="Home"
         component={Home}

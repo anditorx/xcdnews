@@ -1,6 +1,11 @@
 import {Text, TouchableOpacity, View, Image} from 'react-native';
 import React from 'react';
-import {IC_BACK, IMG_ACCOUNT_BLACK} from '../../../res';
+import {
+  IC_BACK,
+  IMG_ACCOUNT_BLACK,
+  IMG_MENU_BLACK,
+  IMG_SEARCH_BLACK,
+} from '../../../res';
 import {styles} from './styles';
 const Header = ({onPress, type, text}) => {
   if (type == 'header-screen') {
@@ -16,10 +21,19 @@ const Header = ({onPress, type, text}) => {
   if (type == 'home') {
     return (
       <View style={styles.containerHome}>
-        <Text style={styles.title}>TCGRDNA</Text>
-        <TouchableOpacity onPress={onPress}>
-          <Image source={IMG_ACCOUNT_BLACK} style={styles.wrapperAvatar} />
-        </TouchableOpacity>
+        <View style={styles.wrapperHeader}>
+          <View style={styles.wrapperTitle}>
+            <Text style={styles.title}>XCDNEWS</Text>
+          </View>
+          <View style={styles.wrapperBtnHeaderHome}>
+            <TouchableOpacity style={{marginRight: 15}}>
+              <Image source={IMG_SEARCH_BLACK} style={styles.wrapperAvatar} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image source={IMG_MENU_BLACK} style={styles.wrapperAvatar} />
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
     );
   }

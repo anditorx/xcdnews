@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
 
     elevation: 8,
   },
-  wrapperAvatar: {height: 30, width: 30, borderRadius: 30 / 2},
-  title: {fontSize: 22, fontWeight: 'bold', color: '#ED23D9'},
+  wrapperAvatar: {height: 25, width: 25},
+  title: {fontSize: 25, fontWeight: 'bold', color: 'black'},
   titleHeaderScreen: {
     textAlign: 'center',
     flex: 1,
@@ -46,6 +46,23 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 24,
     color: '#ED23D9',
+  },
+  wrapperHeader: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  wrapperTitle: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  wrapperBtnHeaderHome: {
+    flexDirection: 'row',
+    position: 'absolute',
+    right: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

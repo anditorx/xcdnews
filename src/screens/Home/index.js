@@ -7,10 +7,26 @@ import {
   ScrollView,
   FlatList,
   StatusBar,
+  Image,
 } from 'react-native';
 import React, {useEffect} from 'react';
-import {colors, IC_IMG_GALLERY} from '../../res';
-import {CircleUser, Header, ItemPost, Loading, Next} from '../../components';
+import {
+  colors,
+  IC_IMG_GALLERY,
+  IMG_GAMES,
+  IMG_MENU_LAINNYA,
+  IMG_SPORTS,
+  IMG_VIRAL,
+} from '../../res';
+import {
+  BoxCategory,
+  CategoryHome,
+  CircleUser,
+  Header,
+  ItemPost,
+  Loading,
+  Next,
+} from '../../components';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   getListUserHomeAction,
@@ -30,66 +46,15 @@ const Home = ({navigation}) => {
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar barStyle={'dark-content'} backgroundColor="white" />
       <Header type={'home'} onPress={() => navigation.navigate('Profile')} />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        {/* header */}
-        {/* user */}
-        <View style={{marginTop: 20, flexDirection: 'row'}}>
-          {dataUser && (
-            <FlatList
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              data={dataUser?.data?.slice(0, 5)}
-              renderItem={({item}) => <CircleUser props={item} />}
-              keyExtractor={item => item.id}
-              ListFooterComponent={() => <Next />}
-            />
-          )}
-        </View>
-        {/* post */}
-        <View style={{marginTop: 20}}>
-          <View
-            style={{
-              padding: 20,
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-            }}>
-            <IC_IMG_GALLERY />
-            <View style={{flex: 1, marginLeft: 10}}>
-              <Text
-                style={{
-                  textAlign: 'left',
-                  color: colors.black,
-                  fontWeight: 'bold',
-                }}>
-                Discover Image
-              </Text>
-            </View>
-            <TouchableOpacity>
-              <Text
-                style={{
-                  textAlign: 'right',
-                  color: colors.blue,
-                  textDecorationStyle: 'solid',
-                  textDecorationLine: 'underline',
-                }}>
-                See All
-              </Text>
-            </TouchableOpacity>
-          </View>
-          {/* item */}
-
-          {dataPost !== [] &&
-            dataPost?.data?.map((item, i) => {
-              return i < 10 ? <ItemPost key={i} props={item} /> : null;
-            })}
-        </View>
-      </ScrollView>
-      {loadingUser ||
-        (loadingPost && (
-          <View style={{position: 'absolute'}}>
-            <Loading />
-          </View>
-        ))}
+      {/* hero */}
+      <View style={{paddingHorizontal: 20}}>
+        <Text style={{fontSize: 18, color: 'black'}}>Hi, Andi</Text>
+        <Text style={{fontWeight: 'bold', fontSize: 35, color: 'black'}}>
+          Kamu mau baca berita apa hari ini?
+        </Text>
+      </View>
+      {/* category */}
+      <CategoryHome navigation={navigation} />
     </SafeAreaView>
   );
 };
