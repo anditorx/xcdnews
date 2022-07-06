@@ -3,21 +3,11 @@ import {
   Text,
   View,
   SafeAreaView,
-  TouchableOpacity,
-  ScrollView,
-  FlatList,
   StatusBar,
   Image,
 } from 'react-native';
 import React, {useEffect} from 'react';
-import {
-  colors,
-  IC_IMG_GALLERY,
-  IMG_GAMES,
-  IMG_MENU_LAINNYA,
-  IMG_SPORTS,
-  IMG_VIRAL,
-} from '../../res';
+
 import {
   BoxCategory,
   CategoryHome,
