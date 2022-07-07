@@ -7,6 +7,7 @@ import IMG_GAMES from './img_games.png';
 import IMG_SPORTS from './img_sports.png';
 import IMG_MENU_LAINNYA from './img_menu_lainnya.png';
 import NO_IMAGE from './no-image.png';
+import IMG_DUMMY from './dummy-img.jpeg';
 
 export {
   IMG_BG,
@@ -18,4 +19,5 @@ export {
   IMG_GAMES,
   IMG_SPORTS,
   IMG_MENU_LAINNYA,
+  IMG_DUMMY,
 };

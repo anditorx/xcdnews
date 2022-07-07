@@ -1,4 +1,4 @@
-import UserListDummy from './UserListDummy';
-import PostListDummy from './PostListDummy';
+import CategoryListDummy from './CategoryListDummy';
+import NewsListDummy from './NewsListDummy';
 
-export {UserListDummy, PostListDummy};
+export {CategoryListDummy, NewsListDummy};

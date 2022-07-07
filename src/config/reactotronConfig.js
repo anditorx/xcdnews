@@ -1,8 +1,8 @@
 import Reactotron from 'reactotron-react-native';
 
 const reactotron = Reactotron.configure({
-  name: 'TCGRDNA',
-  host: '192.168.1.5',
+  name: 'XCDNEWS',
+  host: '192.168.1.3',
 }).useReactNative();
 
 if (reactotron) {
