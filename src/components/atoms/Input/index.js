@@ -41,8 +41,7 @@ const Input = ({
     );
   }
   return (
-    <View style={styles.container}>
-      <Text style={styles.label(fontSize)}>{label}</Text>
+    <View>
       <TextInput
         onBlur={onBlur}
         style={styles.input(fontSize, width, height)}

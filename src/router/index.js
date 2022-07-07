@@ -1,7 +1,15 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {GetStarted, Home, Menu, Profile, Read, Register} from '../screens';
+import {
+  GetStarted,
+  Home,
+  Menu,
+  Profile,
+  Read,
+  Register,
+  Search,
+} from '../screens';
 import ProfileEdit from '../screens/Profile/Edit';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {MyTabBar} from '../components';
@@ -41,6 +49,11 @@ const Router = () => {
       <Stack.Screen
         name="Read"
         component={Read}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Search"
+        component={Search}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

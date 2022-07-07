@@ -64,7 +64,11 @@ const NewsList = props => {
         {props?.data &&
           props?.data !== [] &&
           props?.data.map((item, index) => (
-            <NewsMedium key={index} item={item} />
+            <NewsMedium
+              key={index}
+              item={item}
+              navigation={props?.navigation}
+            />
           ))}
       </View>
     </View>

@@ -1,15 +1,20 @@
 import * as ActionTypes from '../actionTypes';
 
 const initialState = {
+  error: false,
+  errorMessage: false,
+  //
   dataNews: false,
   loadingNews: false,
   successNews: false,
-  error: false,
-  errorMessage: false,
   //
   dataNewsCategory: false,
   loadingNewsCategory: false,
   successNewsCategory: false,
+  //
+  dataNewsSearch: false,
+  loadingNewsSearch: false,
+  successNewsSearch: false,
 };
 
 export default function (state = initialState, action) {
@@ -66,6 +71,31 @@ export default function (state = initialState, action) {
         error: true,
         successCategory: false,
         dataNewsCategory: action.payload.dataNewsCategory,
+        errorMessage: action.payload.errorMessage,
+      };
+    //
+    case ActionTypes.GET_NEWS_BY_SEARCH_REQUEST:
+      return {
+        ...state,
+        loadingNewsSearch: true,
+        error: false,
+        successSearch: false,
+        errorMessage: false,
+      };
+    case ActionTypes.GET_NEWS_BY_SEARCH_SUCCESS:
+      return {
+        ...state,
+        loadingNewsSearch: false,
+        successSearch: true,
+        dataNewsSearch: action.payload.dataNewsSearch,
+      };
+    case ActionTypes.GET_NEWS_BY_SEARCH_FAILED:
+      return {
+        ...state,
+        loadingNewsSearch: false,
+        error: true,
+        successSearch: false,
+        dataNewsSearch: action.payload.dataNewsSearch,
         errorMessage: action.payload.errorMessage,
       };
     default:

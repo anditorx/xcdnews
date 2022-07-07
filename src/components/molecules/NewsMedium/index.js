@@ -5,7 +5,9 @@ import {windowWidth} from '../../../utils';
 
 const NewsMedium = props => {
   return (
-    <TouchableOpacity style={{width: windowWidth / 2 - 30, marginVertical: 10}}>
+    <TouchableOpacity
+      style={{width: windowWidth / 2 - 30, marginVertical: 10}}
+      onPress={() => props?.navigation.navigate('Read', props)}>
       <Image
         source={{uri: `${API_URL}/${props?.item?.image}`}}
         style={{

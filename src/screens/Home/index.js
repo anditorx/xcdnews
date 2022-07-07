@@ -67,7 +67,7 @@ const Home = ({navigation}) => {
           />
         )}
         {/* news medium list section */}
-        <NewsList text="Terkini" data={dataNews} />
+        <NewsList text="Terkini" data={dataNews} navigation={navigation} />
         <Gap height={50} />
       </ScrollView>
       {loadingNewsCategory ||

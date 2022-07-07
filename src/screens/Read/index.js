@@ -15,12 +15,11 @@ import moment from 'moment';
 
 const Read = ({navigation, route}) => {
   const dataItem = route.params.item;
-  console.tron.log('🚀 ~ route :=>', route?.params);
   const B = props => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>;
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar barStyle={'dark-content'} backgroundColor="white" />
-      <Header type={'read'} navigation={navigation} />
+      <Header type={'back'} navigation={navigation} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{padding: 20}}>
           <Text

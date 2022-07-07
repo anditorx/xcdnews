@@ -11,7 +11,7 @@ import {
 } from '../../../res';
 import {styles} from './styles';
 const Header = props => {
-  if (props?.type == 'read') {
+  if (props?.type == 'back') {
     return (
       <View style={styles.containerHome}>
         <View style={styles.wrapperHeader}>
@@ -23,17 +23,16 @@ const Header = props => {
               flex: 1,
               justifyContent: 'center',
               alignItems: 'center',
-              paddingLeft: 25,
             }}>
             <Text style={styles.title}>XCDNEWS</Text>
           </View>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={{justifyContent: 'center', alignItems: 'center'}}>
             <Image source={IMG_SHARE} style={styles.wrapperLogout} />
             <Text style={{fontSize: 12, color: 'black', fontWeight: 'bold'}}>
               Bagikan
             </Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     );
@@ -77,7 +76,9 @@ const Header = props => {
             <Text style={styles.title}>XCDNEWS</Text>
           </View>
           <View style={styles.wrapperBtnHeaderHome}>
-            <TouchableOpacity style={{marginRight: 15}}>
+            <TouchableOpacity
+              style={{marginRight: 15}}
+              onPress={() => props?.navigation.navigate('Search')}>
               <Image source={IMG_SEARCH_BLACK} style={styles.wrapperAvatar} />
             </TouchableOpacity>
             <TouchableOpacity

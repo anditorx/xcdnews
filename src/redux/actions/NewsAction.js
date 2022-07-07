@@ -69,3 +69,39 @@ export const doGetNewsByCategoryAction = param => {
       });
   };
 };
+export const doGetNewsBySearchAction = param => {
+  return dispatch => {
+    dispatch({type: ActionTypes.GET_NEWS_BY_SEARCH_REQUEST});
+    const urlService =
+      CONSTANT.API_URL +
+      CONSTANT.VERSION +
+      SERVICES.NEWS_LIST +
+      `/${param?.form}`;
+
+    const options = {
+      //   headers: {
+      //     'app-id': CONSTANT.API_KEY,
+      //   },
+    };
+
+    Axios.get(urlService, options)
+      .then(res => {
+        dispatch({
+          type: ActionTypes.GET_NEWS_BY_SEARCH_SUCCESS,
+          payload: {
+            dataNewsSearch: res?.data?.data,
+          },
+        });
+      })
+      .catch(err => {
+        dispatch({
+          type: ActionTypes.GET_NEWS_BY_SEARCH_FAILED,
+          payload: {
+            dataNewsSearch: false,
+            errorMessage: err,
+          },
+        });
+        showToast('Ups!', err, 'danger');
+      });
+  };
+};
