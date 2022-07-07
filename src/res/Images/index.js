@@ -8,6 +8,9 @@ import IMG_SPORTS from './img_sports.png';
 import IMG_MENU_LAINNYA from './img_menu_lainnya.png';
 import NO_IMAGE from './no-image.png';
 import IMG_DUMMY from './dummy-img.jpeg';
+import IMG_BACK from './img_back.png';
+import IMG_LOGOUT from './img_logout.png';
+import IMG_SHARE from './share.png';
 
 export {
   IMG_BG,
@@ -20,4 +23,7 @@ export {
   IMG_SPORTS,
   IMG_MENU_LAINNYA,
   IMG_DUMMY,
+  IMG_BACK,
+  IMG_SHARE,
+  IMG_LOGOUT,
 };

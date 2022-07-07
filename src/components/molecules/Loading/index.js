@@ -6,7 +6,7 @@ const Loading = () => {
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
-        <ActivityIndicator size="large" color={'#ED23D9'} />
+        <ActivityIndicator size="large" color={'black'} />
         <Text style={styles.text}>Please Wait...</Text>
       </View>
     </View>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   text: {
-    color: '#ED23D9',
+    color: 'black',
     fontSize: 14,
     // marginTop: 12,
     marginLeft: 10,

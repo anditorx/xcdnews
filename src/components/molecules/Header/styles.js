@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   wrapperAvatar: {height: 25, width: 25},
+  wrapperLogout: {height: 25, width: 25},
   title: {fontSize: 25, fontWeight: 'bold', color: 'black'},
   titleHeaderScreen: {
     textAlign: 'center',

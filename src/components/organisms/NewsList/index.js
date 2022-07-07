@@ -32,7 +32,9 @@ const NewsList = props => {
           vertical={props?.vertical}
           showsHorizontalScrollIndicator={false}
           data={props?.data}
-          renderItem={NewsLarge}
+          renderItem={({item}) => (
+            <NewsLarge item={item} navigation={props?.navigation} />
+          )}
           keyExtractor={item => item._id}
           style={{paddingHorizontal: 15}}
           ListFooterComponent={<Gap width={35} />}
@@ -59,7 +61,8 @@ const NewsList = props => {
           paddingHorizontal: 20,
           justifyContent: 'space-between',
         }}>
-        {props?.data !== [] &&
+        {props?.data &&
+          props?.data !== [] &&
           props?.data.map((item, index) => (
             <NewsMedium key={index} item={item} />
           ))}

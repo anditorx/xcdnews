@@ -26,6 +26,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {
   getListUserHomeAction,
   getListPostHomeAction,
+  doGetNewsAllListAction,
+  doGetNewsByCategoryAction,
 } from '../../redux/actions';
 import {IMG_DUMMY, NewsListDummy, NO_IMAGE} from '../../res';
 import {API_URL} from '../../constant/Constant';
@@ -33,14 +35,18 @@ import {responsiveWidth, windowWidth} from '../../utils';
 
 const Home = ({navigation}) => {
   const dispatch = useDispatch();
-  const {dataUser, loadingUser} = useSelector(state => state.UserReducer);
-  const {dataPost, loadingPost} = useSelector(state => state.PostReducer);
+  const {dataNews, loadingNews, dataNewsCategory, loadingNewsCategory} =
+    useSelector(state => state.NewsReducer);
+  useEffect(() => {
+    dispatch(doGetNewsByCategoryAction({category: 'Viral'}));
+    dispatch(doGetNewsAllListAction());
+  }, []);
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar barStyle={'dark-content'} backgroundColor="white" />
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Header type={'home'} onPress={() => navigation.navigate('Profile')} />
+        <Header type={'home'} navigation={navigation} />
         {/* hero */}
         <View style={{paddingHorizontal: 20}}>
           <Text style={{fontSize: 18, color: 'black'}}>Hi, Andi</Text>
@@ -51,16 +57,25 @@ const Home = ({navigation}) => {
         {/* category */}
         <CategoryHome navigation={navigation} />
         {/* news large section */}
-        <NewsList
-          text="Viral"
-          data={NewsListDummy}
-          type="large-horizontal"
-          horizontal={true}
-        />
+        {dataNewsCategory && (
+          <NewsList
+            text="Viral"
+            data={dataNewsCategory}
+            type="large-horizontal"
+            horizontal={true}
+            navigation={navigation}
+          />
+        )}
         {/* news medium list section */}
-        <NewsList text="Terkini" data={NewsListDummy} />
+        <NewsList text="Terkini" data={dataNews} />
         <Gap height={50} />
       </ScrollView>
+      {loadingNewsCategory ||
+        (loadingNews && (
+          <View style={{position: 'absolute'}}>
+            <Loading />
+          </View>
+        ))}
     </SafeAreaView>
   );
 };
