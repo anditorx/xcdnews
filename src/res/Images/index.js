@@ -13,6 +13,7 @@ import IMG_LOGOUT from './img_logout.png';
 import IMG_SHARE from './share.png';
 import IMG_NEWSLOGO from './newspaper.png';
 import IMG_GOOGLE from './google.png';
+import IMG_RIGHT_ARROW from './right-arrow.png';
 
 export {
   IMG_BG,
@@ -30,4 +31,5 @@ export {
   IMG_LOGOUT,
   IMG_NEWSLOGO,
   IMG_GOOGLE,
+  IMG_RIGHT_ARROW,
 };

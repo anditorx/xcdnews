@@ -63,15 +63,12 @@ const SignIn = ({navigation}) => {
       // Sign-in the user with the credential
       const userSignIn = auth().signInWithCredential(googleCredential);
 
-      console.tron.log('🚀 ~ idToken :=>', idToken);
-
       storeDataStorage(CONSTANT.STORAGE_TOKEN_USER, idToken);
 
       navigation.reset({index: 0, routes: [{name: 'Home'}]});
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      console.tron.log('🚀 ~ error :=>', error);
     }
   };
 

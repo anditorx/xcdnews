@@ -11,6 +11,33 @@ import {
 } from '../../../res';
 import {styles} from './styles';
 const Header = props => {
+  if (props?.type == 'back-category') {
+    return (
+      <View style={styles.containerHome}>
+        <View style={styles.wrapperHeader}>
+          <TouchableOpacity onPress={() => props?.navigation.goBack()}>
+            <Image source={IMG_BACK} style={styles.wrapperAvatar} />
+          </TouchableOpacity>
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text style={styles.title}>{props?.title}</Text>
+          </View>
+          {/* <TouchableOpacity
+            style={{justifyContent: 'center', alignItems: 'center'}}>
+            <Image source={IMG_SHARE} style={styles.wrapperLogout} />
+            <Text style={{fontSize: 12, color: 'black', fontWeight: 'bold'}}>
+              Bagikan
+            </Text>
+          </TouchableOpacity> */}
+        </View>
+      </View>
+    );
+  }
+
   if (props?.type == 'back') {
     return (
       <View style={styles.containerHome}>

@@ -5,6 +5,7 @@ import {IMG_VIRAL} from '../../../res';
 const BoxCategory = props => {
   return (
     <TouchableOpacity
+      onPress={props.onPress}
       style={{
         flexDirection: 'row',
         width: 150,

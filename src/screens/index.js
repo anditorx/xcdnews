@@ -6,5 +6,18 @@ import Menu from './Menu';
 import Read from './Read';
 import Search from './Search';
 import SignIn from './SignIn';
+import CategoryList from './Category/CategoryList';
+import NewsByCategory from './Category/NewsByCategory';
 
-export {Register, Home, Profile, GetStarted, Menu, Read, Search, SignIn};
+export {
+  Register,
+  Home,
+  Profile,
+  GetStarted,
+  Menu,
+  Read,
+  Search,
+  SignIn,
+  CategoryList,
+  NewsByCategory,
+};

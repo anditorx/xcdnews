@@ -13,10 +13,32 @@ const CategoryHome = props => {
         flexDirection: 'row',
         justifyContent: 'space-around',
       }}>
-      <BoxCategory image={IMG_VIRAL} title="Viral" />
-      <BoxCategory image={IMG_GAMES} title="Games" />
-      <BoxCategory image={IMG_SPORTS} title="Olahraga" />
-      <BoxCategory image={IMG_MENU_LAINNYA} title="Lainnya" />
+      <BoxCategory
+        image={IMG_VIRAL}
+        title="Viral"
+        onPress={() =>
+          props?.navigation.navigate('NewsByCategory', {param: 'viral'})
+        }
+      />
+      <BoxCategory
+        image={IMG_GAMES}
+        title="Games"
+        onPress={() =>
+          props?.navigation.navigate('NewsByCategory', {param: 'Games'})
+        }
+      />
+      <BoxCategory
+        image={IMG_SPORTS}
+        title="Olahraga"
+        onPress={() =>
+          props?.navigation.navigate('NewsByCategory', {param: 'Olahraga'})
+        }
+      />
+      <BoxCategory
+        image={IMG_MENU_LAINNYA}
+        title="Lainnya"
+        onPress={() => props?.navigation.navigate('CategoryList')}
+      />
     </View>
   );
 };

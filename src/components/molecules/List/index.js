@@ -1,8 +1,8 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
-import {IC_NEXT} from '../../../res';
+import {colors, IC_NEXT, IMG_RIGHT_ARROW} from '../../../res';
 
-const List = ({type, onPress}) => {
+const List = ({type, onPress, text}) => {
   if (type == 'list-profile') {
     return (
       <TouchableOpacity
@@ -30,9 +30,21 @@ const List = ({type, onPress}) => {
     );
   }
   return (
-    <View>
-      <Text>List</Text>
-    </View>
+    <TouchableOpacity
+      onPress={onPress}
+      style={{
+        marginHorizontal: 20,
+        marginVertical: 10,
+        borderBottomColor: colors.darkGrey,
+        borderBottomWidth: 1,
+        paddingVertical: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}>
+      <Text>{text}</Text>
+      <Image source={IMG_RIGHT_ARROW} style={{height: 15, width: 15}} />
+    </TouchableOpacity>
   );
 };
 

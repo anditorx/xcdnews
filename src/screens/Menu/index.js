@@ -27,7 +27,6 @@ const Menu = ({navigation}) => {
 
   const getCurrentUser = async () => {
     const userInfo = await GoogleSignin.signInSilently();
-    console.tron.log('🚀 ~ userInfo :=>', userInfo);
     setUserInfo(userInfo);
   };
 

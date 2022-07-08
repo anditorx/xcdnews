@@ -28,6 +28,7 @@ import {
   getListPostHomeAction,
   doGetNewsAllListAction,
   doGetNewsByCategoryAction,
+  doGetNewsMediumAction,
 } from '../../redux/actions';
 import {IMG_DUMMY, NewsListDummy, NO_IMAGE} from '../../res';
 import {API_URL} from '../../constant/Constant';
@@ -35,10 +36,10 @@ import {responsiveWidth, windowWidth} from '../../utils';
 
 const Home = ({navigation}) => {
   const dispatch = useDispatch();
-  const {dataNews, loadingNews, dataNewsCategory, loadingNewsCategory} =
+  const {dataNews, loadingNews, dataNewsMedium, loadingNewsMedium} =
     useSelector(state => state.NewsReducer);
   useEffect(() => {
-    dispatch(doGetNewsByCategoryAction({category: 'Viral'}));
+    dispatch(doGetNewsMediumAction({category: 'Viral'}));
     dispatch(doGetNewsAllListAction());
   }, []);
 
@@ -57,10 +58,10 @@ const Home = ({navigation}) => {
         {/* category */}
         <CategoryHome navigation={navigation} />
         {/* news large section */}
-        {dataNewsCategory && (
+        {dataNewsMedium && (
           <NewsList
             text="Viral"
-            data={dataNewsCategory}
+            data={dataNewsMedium}
             type="large-horizontal"
             horizontal={true}
             navigation={navigation}
@@ -70,12 +71,11 @@ const Home = ({navigation}) => {
         <NewsList text="Terkini" data={dataNews} navigation={navigation} />
         <Gap height={50} />
       </ScrollView>
-      {loadingNewsCategory ||
-        (loadingNews && (
-          <View style={{position: 'absolute'}}>
-            <Loading />
-          </View>
-        ))}
+      {loadingNewsMedium && (
+        <View style={{position: 'absolute'}}>
+          <Loading />
+        </View>
+      )}
     </SafeAreaView>
   );
 };

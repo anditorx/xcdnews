@@ -2,9 +2,11 @@ import {View, Text} from 'react-native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
+  CategoryList,
   GetStarted,
   Home,
   Menu,
+  NewsByCategory,
   Profile,
   Read,
   Register,
@@ -60,6 +62,16 @@ const Router = () => {
       <Stack.Screen
         name="Search"
         component={Search}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="CategoryList"
+        component={CategoryList}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="NewsByCategory"
+        component={NewsByCategory}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
