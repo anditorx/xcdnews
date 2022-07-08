@@ -11,6 +11,8 @@ import IMG_DUMMY from './dummy-img.jpeg';
 import IMG_BACK from './img_back.png';
 import IMG_LOGOUT from './img_logout.png';
 import IMG_SHARE from './share.png';
+import IMG_NEWSLOGO from './newspaper.png';
+import IMG_GOOGLE from './google.png';
 
 export {
   IMG_BG,
@@ -26,4 +28,6 @@ export {
   IMG_BACK,
   IMG_SHARE,
   IMG_LOGOUT,
+  IMG_NEWSLOGO,
+  IMG_GOOGLE,
 };

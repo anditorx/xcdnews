@@ -9,6 +9,7 @@ import {
   Read,
   Register,
   Search,
+  SignIn,
 } from '../screens';
 import ProfileEdit from '../screens/Profile/Edit';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -31,6 +32,11 @@ const Router = () => {
         component={Register}
         options={{headerShown: false}}
       /> */}
+      <Stack.Screen
+        name="SignIn"
+        component={SignIn}
+        options={{headerShown: false}}
+      />
       <Stack.Screen
         name="Home"
         component={Home}
