@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "941044052483",
+    "project_id": "xcdnews-3cd59",
+    "storage_bucket": "xcdnews-3cd59.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941044052483:android:ca0f67495fae813d721436",
+        "android_client_info": {
+          "package_name": "com.tcgrdna"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941044052483-6fkuu45ghfs3a73e3f0ci7qfjkbdvvub.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tcgrdna",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "941044052483-g8hm6a4qtmr45ihiu2776equ6dl76ua0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tcgrdna",
+            "certificate_hash": "998fb66e1f79e8ed29ac2a5c491c9c9fc9d2a975"
+          }
+        },
+        {
+          "client_id": "941044052483-rhr32ch0egovp9rok5ad0k2llopokgbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbArrml3f4wDes1JwgS6BgVt9wdCckn68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941044052483-rhr32ch0egovp9rok5ad0k2llopokgbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

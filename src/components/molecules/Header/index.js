@@ -58,6 +58,7 @@ const Header = props => {
             <Text style={styles.title}>XCDNEWS</Text>
           </View>
           <TouchableOpacity
+            onPress={props?.onPress}
             style={{justifyContent: 'center', alignItems: 'center'}}>
             <Image source={IMG_LOGOUT} style={styles.wrapperLogout} />
             <Text style={{fontSize: 12, color: 'black', fontWeight: 'bold'}}>

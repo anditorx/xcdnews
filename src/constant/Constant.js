@@ -5,3 +5,4 @@ export const API_URL = 'https://wst-news.herokuapp.com';
 
 // ASYNC STORAGE KEY
 export const STORAGE_DATAUSER = '@STORAGE_DATAUSER';
+export const STORAGE_TOKEN_USER = '@STORAGE_TOKEN_USER';

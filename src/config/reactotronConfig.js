@@ -2,7 +2,7 @@ import Reactotron from 'reactotron-react-native';
 
 const reactotron = Reactotron.configure({
   name: 'XCDNEWS',
-  host: '192.168.1.3',
+  host: '192.168.43.100',
 }).useReactNative();
 
 if (reactotron) {
